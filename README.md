@@ -4,7 +4,7 @@ Script para aprovisionar maquinas con S.O. Fedora (Codecs, Repos externos, Docke
 ### Prerrequisitos
 
 - Tener un S.O. Fedora ( fc34 en adelante )
-- `curl` o `wget` debería estar instalados
+- `curl` o `wget` deberían estar instalados
 - `git` debería estar instalado ( v2.4.11 en adelante)
 
 ### Instalación

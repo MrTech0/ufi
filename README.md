@@ -11,7 +11,7 @@ Script para aprovisionar maquinas con S.O. Fedora (Codecs, Repos externos, Docke
 
 UFI se instala ejecutando uno de los siguientes comandos en su terminal. Puede instalarlo a través de la línea de comandos con `curl`,` wget` u otra herramienta similar.
 
-| Method    | Command                                                                                           |
+| Método    | Comando                                                                                           |
 |:----------|:--------------------------------------------------------------------------------------------------|
 | **curl**  | `sh -c "$(curl -fsSL https://raw.githubusercontent.com/MrTech0/ufi/main/ufi.sh)"` |
 | **wget**  | `sh -c "$(wget -O- https://raw.githubusercontent.com/MrTech0/ufi/main/ufi.sh)"`   |

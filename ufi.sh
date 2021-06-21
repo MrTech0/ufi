@@ -49,6 +49,11 @@ function VerificarRoot {
   fi
 }
 
+function OptimizarDNF{
+	echo 'fastestmirror=True' >> /etc/dnf/dnf.conf
+	echo 'max_parallel_downloads=10' >> /etc/dnf/dnf.conf
+}
+
 function ExtraRepo{
 
 clear
@@ -195,6 +200,7 @@ echo "--------------------------------------------------------------------------
 echo "ufi.sh -> Aprovisionador de maquinas Fedora's"
 echo "--------------------------------------------------------------------------"
 echo
+OptimizarDNF
 ExtraRepo
 RepoChrome
 RepoFlatpak

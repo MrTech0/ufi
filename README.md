@@ -13,6 +13,6 @@ UFI se instala ejecutando uno de los siguientes comandos en su terminal. Puede i
 
 | Método    | Comando                                                                                           |
 |:----------|:--------------------------------------------------------------------------------------------------|
-| **curl**  | `sh -c "$(curl -fsSL https://raw.githubusercontent.com/MrTech0/ufi/main/ufi.sh)"` |
-| **wget**  | `sh -c "$(wget -O- https://raw.githubusercontent.com/MrTech0/ufi/main/ufi.sh)"`   |
-| **fetch** | `sh -c "$(fetch -o - https://raw.githubusercontent.com/MrTech0/ufi/main/ufi.sh)"` |
+| **curl**  | `bash -c "$(curl -fsSL https://raw.githubusercontent.com/MrTech0/ufi/main/ufi.sh)"` |
+| **wget**  | `bash -c "$(wget -O- https://raw.githubusercontent.com/MrTech0/ufi/main/ufi.sh)"`   |
+| **fetch** | `bash -c "$(fetch -o - https://raw.githubusercontent.com/MrTech0/ufi/main/ufi.sh)"` |

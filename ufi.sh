@@ -64,7 +64,7 @@ function OptimizarDNF {
 	fi
 }
 
-function ExtraRepo {
+function RepoFusion {
 
 clear
 
@@ -73,9 +73,9 @@ sleep 3
 
 dnf clean all
 
-dnf update -y
+dnf -y update 
 
-dnf autoremove -y
+dnf -y autoremove 
 
 dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
@@ -102,7 +102,7 @@ cd /tmp
 
 # Instalando flatpak y Repo Flathub
 
-function RepoFlatpak {
+function RepoFlathub {
 
 clear
 
@@ -132,30 +132,39 @@ dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce
 
 #APPS
 
-function InstalarApps {
+function InstalarCódecs {
 
 clear
 
-echo "Instalando APPS"
+echo "Instalando Códecs"
 
 sleep 3
 
 dnf install libwebp webp-pixbuf-loader libopenraw libopenraw-pixbuf-loader unrar libunrar p7zip p7zip-plugins gstreamer1-plugin-openh264 h264enc mozilla-openh264 openh264 x264 x264-libs libde265 x265 x265-libs gstreamer1 gstreamer1-libav gstreamer1-plugin-openh264 gstreamer1-plugins-bad-free gstreamer1-plugins-bad-free-extras gstreamer1-plugins-bad-free-fluidsynth gstreamer1-plugins-bad-free-wildmidi gstreamer1-plugins-bad-free-zbar gstreamer1-plugins-bad-freeworld gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-good-extras gstreamer1-plugins-good-gtk gstreamer1-plugins-good-qt gstreamer1-plugins-ugly gstreamer1-plugins-ugly-free gstreamer1-vaapi gstreamer1-svt-av1 svt-av1 svt-av1-libs gstreamer1-svt-vp9 rav1e rav1e-libs dav1d libdav1d libva libva-utils vlc redhat-lsb-core kernel-devel gnome-tweaks gnome-extensions-app eclipse-jdt grub-customizer rpmfusion-free-appstream-data rpmfusion-nonfree-appstream-data -y
 
-#Instalar chrome
+dnf autoremove -y
+}
 
-dnf install google-chrome-stable -y
+function InstalarApps {
 
-# Instalar Discord
+clear
+
+echo "Instalando APPs"
+
+sleep 3
+
+# Instalando apps de tipo RPM
+
+dnf install vlc redhat-lsb-core kernel-devel gnome-tweaks gnome-extensions-app eclipse-jdt grub-customizer rpmfusion-free-appstream-data rpmfusion-nonfree-appstream-data google-chrome-stable-y
+
+dnf -y group install --with-optional virtualization
+
+# Instalando apps de tipo Flatpak
 flatpak install discord spotify -y
-
-# Instalar spotify
-
-flatpak install spotify -y
 
 #Instalar Docker
 
-dnf install docker-ce docker-ce-cli containerd.io docker-compose -y
+dnf -y install docker-ce docker-ce-cli containerd.io docker-compose 
 
 groupadd docker
 
@@ -167,14 +176,12 @@ usermod -aG docker $usuario
 
 #Limpiamos dependencias
 
-dnf autoremove -y
+dnf -y autoremove 
 }
 
 function ArrancaServicio {
 
-systemctl start libvirtd
-
-systemctl enable libvirtd
+systemctl enable --now libvirtd
 
 systemctl enable --now docker
 
@@ -209,9 +216,9 @@ echo "ufi.sh -> Aprovisionador de maquinas Fedora's"
 echo "--------------------------------------------------------------------------"
 echo
 OptimizarDNF
-ExtraRepo
+RepoFusion
 RepoChrome
-RepoFlatpak
+RepoFlathub
 RepoDocker
 InstalarApps
 ArrancaServicio

@@ -155,8 +155,6 @@ read -p "¿Cual es el nombre de tu usuario personal" usuario
 
 usermod -aG docker $usuario
 
-$usuario=''
-
 #Limpiamos dependencias
 
 dnf autoremove -y

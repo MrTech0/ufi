@@ -49,12 +49,12 @@ function VerificarRoot {
   fi
 }
 
-function OptimizarDNF{
+function OptimizarDNF {
 	echo 'fastestmirror=True' >> /etc/dnf/dnf.conf
 	echo 'max_parallel_downloads=10' >> /etc/dnf/dnf.conf
 }
 
-function ExtraRepo{
+function ExtraRepo {
 
 clear
 
@@ -73,7 +73,7 @@ dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-
 
 # Instalando Google repo y google-chrome-stable
 
-function RepoChrome{
+function RepoChrome {
 
 clear
 
@@ -92,7 +92,7 @@ cd /tmp
 
 # Instalando flatpak y Repo Flathub
 
-function RepoFlatpak{
+function RepoFlatpak {
 
 clear
 
@@ -105,7 +105,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 }
 
 #DOCKER
-function RepoDocker{
+function RepoDocker {
 
 clear
 
@@ -122,7 +122,7 @@ dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce
 
 #APPS
 
-function InstalarApps{
+function InstalarApps {
 
 clear
 
@@ -162,7 +162,7 @@ $usuario=''
 dnf autoremove -y
 }
 
-function ArrancaServicio{
+function ArrancaServicio {
 
 systemctl start libvirtd
 

@@ -151,7 +151,7 @@ groupadd docker
 
 #Indicar nombre usuario
 
-read -p "¿Cual es el nombre de tu usuario personal" usuario
+read -p "¿Cual es el nombre de tu usuario personal?\n" usuario
 
 usermod -aG docker $usuario
 

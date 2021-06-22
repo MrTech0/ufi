@@ -50,8 +50,18 @@ function VerificarRoot {
 }
 
 function OptimizarDNF {
-	echo 'fastestmirror=True' >> /etc/dnf/dnf.conf
-	echo 'max_parallel_downloads=10' >> /etc/dnf/dnf.conf
+	local FICHERO="/etc/dnf/dnf.conf"
+	local existe=`grep -c fastestmirror $FICHERO`
+	if [  $existe == 0 ] # si no existe la pongo
+	then
+		echo 'fastestmirror=True' >> `echo $FICHERO`
+	fi
+
+	existe=`grep -c max_parallel_downloads $FICHERO`
+	if [  $existe == 0 ] # si no existe la pongo
+	then
+		echo 'max_parallel_downloads=10' >> `echo $FICHERO`
+	fi
 }
 
 function ExtraRepo {

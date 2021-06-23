@@ -155,7 +155,7 @@ sleep 3
 
 # Instalando apps de tipo RPM
 
-dnf install vlc redhat-lsb-core kernel-devel gnome-tweaks gnome-extensions-app eclipse-jdt grub-customizer rpmfusion-free-appstream-data rpmfusion-nonfree-appstream-data google-chrome-stable-y
+dnf -y install vlc redhat-lsb-core kernel-devel gnome-tweaks gnome-extensions-app eclipse-jdt grub-customizer rpmfusion-free-appstream-data rpmfusion-nonfree-appstream-data google-chrome-stable
 
 dnf -y group install --with-optional virtualization
 
